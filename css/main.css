@@ -1,0 +1,526 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  /* width: 1440px; */
+  height: 500vh;
+}
+:root {
+  --main-color: #b88e2f;
+  --secondary-color: white;
+  --black: #333333;
+}
+/* Start Header */
+header {
+  display: flex;
+  height: 6.25rem;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  padding-top: 1.8125rem;
+  padding-left: 3.5625rem;
+  padding-bottom: 1.875rem;
+  padding-right: 6.25rem;
+  position: relative;
+}
+
+header .nav,
+.icons {
+  align-content: center;
+}
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 20px;
+}
+ul li a {
+  text-decoration: none;
+  color: var(--black);
+}
+ul li a:hover {
+  color: var(--main-color);
+}
+header .nav i {
+  font-size: 40px;
+}
+/* header .nav {
+  position: relative;
+} */
+@media (min-width: 900px) {
+  header .nav i {
+    display: none;
+  }
+}
+@media (max-width: 899px) {
+  header .nav ul,
+  header .icons {
+    display: none;
+  }
+  header > i {
+    align-content: center;
+  }
+  header .nav .fa:hover {
+    color: var(--main-color);
+  }
+
+  header .nav .fa:hover + ul li:hover {
+    padding-left: 10px;
+    border-bottom: 1px white solid;
+  }
+}
+/* End Header  */
+
+/* Start Hero */
+.hero {
+  background-image: url(/images/scandinavian-interior-mockup-wall-decal-background\ 1.png);
+  /* background-size: contain; */
+  width: 100%;
+  margin: auto;
+  height: 44.801875rem;
+  margin-top: 0;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero div {
+  position: absolute;
+  right: 3.625rem;
+  top: 10.95625rem;
+  background-color: #fff3e3;
+  width: 643px;
+  height: 443px;
+}
+.hero p:first-child {
+  width: 7.6875rem;
+  height: 1.5rem;
+  margin-top: 3.875rem;
+  margin-left: 2.4375rem;
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  width: 34.9375rem;
+  height: 7.9375rem;
+  color: var(--main-color);
+  margin-left: 2.4375rem;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 65px;
+  margin-bottom: 1rem;
+}
+.hero p:nth-child(3) {
+  width: 34.9375rem;
+  height: 7.9375rem;
+  margin-left: 2.4375rem;
+}
+.hero button {
+  width: 13rem;
+  height: 4rem;
+  margin-left: 2.4375rem;
+  background-color: var(--main-color);
+  color: white;
+  border: transparent;
+  transform: translateY(-50px);
+}
+
+.hero button:hover {
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+@media (max-width: 1200px) {
+  .hero {
+    width: 70%;
+  }
+  .hero div {
+    width: 320px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero h1 {
+    max-width: 80%;
+    min-width: 80%;
+    color: var(--main-color);
+    margin-left: 2.4375rem;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 1rem;
+  }
+  .hero p:nth-child(3) {
+    max-width: 80%;
+    margin-left: 2.4375rem;
+  }
+}
+/* End Hero */
+
+/* Start Range */
+.range h2,
+.range p,
+.products h2 {
+  color: var(--black);
+  text-align: center;
+  font-weight: bold;
+  /* font-size: ; */
+}
+.range p,
+.products h2 {
+  margin-bottom: 2rem;
+}
+.container {
+  /* width: 73.9375rem; */
+  /* height: 42.8125rem; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.range .container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.range img {
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+@media (max-width: 1200px) {
+  .range .container {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .range img {
+    width: 200px;
+  }
+}
+/* End Range */
+/* Start Products */
+.products .container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2rem;
+}
+.range .container .section {
+  text-decoration: none;
+}
+.products .description {
+  background-color: #f4f5f7;
+}
+.product {
+  position: relative;
+}
+
+.product img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.product .description {
+  position: relative; /* Keep description above overlay */
+  z-index: -1;
+  padding: 1rem;
+  background-color: #f4f5f7;
+  line-height: 1.6rem;
+}
+
+.overlay button {
+  width: 12.625rem;
+  height: 3rem;
+  background-color: white;
+  color: var(--main-color);
+  border: transparent;
+  margin-bottom: 1.5rem;
+}
+.overlay button:hover {
+  color: white;
+  background-color: var(--main-color);
+  border: 1px solid white;
+  cursor: pointer;
+}
+.overlay .icons {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: white;
+}
+.overlay .icons div:hover {
+  color: var(--main-color);
+}
+
+.overlay .icons div {
+  margin-left: 1rem;
+}
+
+.products {
+  flex-direction: column;
+  margin-bottom: 20rem;
+}
+.products .container {
+  width: 73.9375rem;
+
+  position: relative;
+}
+.products .container button {
+  position: absolute;
+  width: 12.625rem;
+  height: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+}
+.products .container button:hover {
+  background-color: var(--main-color);
+  border: 1 solid white;
+  color: white;
+}
+@media (max-width: 1200px) {
+  .products .container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+    width: 300px;
+  }
+  .products .container button {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  .overlay .icons {
+    position: absolute;
+    font-size: 15px;
+    top: 50%;
+    transform: translateY(60px);
+  }
+}
+
+/* End Products */
+
+/* Start Inspiration */
+.inspirations {
+  position: relative;
+  display: flex;
+  background-color: #fcf8f3;
+  justify-content: space-between;
+}
+.inspirations .left-container {
+  transform: translate(100px, 223px);
+}
+.inspirations .left-container h2 {
+  font-weight: 700;
+  font-size: 40px;
+  width: 422px;
+  color: #3a3a3a;
+}
+.inspirations .left-container p {
+  font-weight: 500;
+  font-size: 16px;
+  width: 368px;
+  height: 48px;
+  color: #616161;
+}
+
+.inspirations .left-container button {
+  background-color: var(--main-color);
+  border: transparent;
+  color: white;
+  width: 176px;
+  height: 48px;
+}
+
+.inspirations .left-container button:hover {
+  background-color: white;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+}
+.inspirations .right-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.inspirations .right-container > div:nth-child(1) {
+  position: relative;
+}
+.inspirations .right-container > div:nth-child(1) div:nth-child(2) {
+  padding-left: 32px;
+  padding-top: 32px;
+  position: absolute;
+  background-color: rgb(255, 255, 255, 0.7);
+  line-height: 24px;
+  /* opacity: 0.7; */
+  width: 217px;
+  height: 130px;
+  left: 24px;
+  bottom: 60px;
+}
+.inspirations .right-container > div:nth-child(1) div:nth-child(2) p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #616161;
+}
+.inspirations .right-container > div:nth-child(1) div:nth-child(2) h3 {
+  color: #3a3a3a;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.inspirations .right-container > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.inspirations .right-container button {
+  position: absolute;
+  background-color: var(--main-color);
+  color: white;
+  border: transparent;
+  height: 48px;
+  width: 48px;
+  bottom: 60px;
+  left: 240px;
+}
+.inspirations .right-container button:hover {
+  background-color: white;
+  color: var(--main-color);
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.inspirations .right-container .temp {
+  position: relative;
+}
+.inspirations .angle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  font-size: 20px;
+  border: 20px solid rgb(255, 254, 254);
+  border-radius: 50%;
+  color: var(--main-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add this line */
+}
+
+.inspirations .angle:hover {
+  border: 20px solid var(--main-color);
+  color: white;
+  cursor: pointer;
+}
+.inspirations .right-container div:nth-child(2) div:nth-child(2) img {
+  position: absolute;
+  right: 0px;
+}
+.inspirations .right-container div:nth-child(2) div:nth-child(1) img {
+  position: relative;
+}
+.inspirations .right-container div:nth-child(2) div:nth-child(3) ul {
+  position: absolute;
+  display: flex;
+  
+  bottom: 40px;
+  right: 345px;
+}
+.inspirations .right-container div:nth-child(2) div:nth-child(3) li {
+  width: 10px;
+  height: 10px;
+  border: 5px solid #d8d8d8;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.inspirations .right-container div:nth-child(2) div:nth-child(3) li:hover {
+  border: 5px solid var(--main-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Add this line */
+}
+
+.inspirations
+  .right-container
+  div:nth-child(2)
+  div:nth-child(3)
+  .active-bullet {
+  border: 5px solid var(--main-color);
+}
+@media (max-width: 1200px) {
+  .inspirations .right-container {
+    display: none;
+  }
+  .inspirations .left-container {
+    height: 500px;
+  }
+}
+
+/* End Inspiration */
+
+/* Start Furniture */
+.furniture p {
+  text-align: center;
+  font-weight: 600;
+  color: #616161;
+  font-size: 20px;
+  line-height: 60px;
+}
+.furniture h2 {
+  text-align: center;
+  color: #3a3a3a;
+  font-weight: 700;
+  font-size: 40px;
+}
+.furniture .main-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.furniture .main-container .left-container {
+  flex-grow: 5;
+}
+.furniture .main-container .middle-container {
+  margin-top: 150px;
+  margin-right: 50px;
+}
+.furniture .main-container .right-container {
+  /* justify-content: center; */
+  /* flex-grow: 5; */
+}
+.furniture .main-container .right-container img:last-child {
+  margin-bottom: 45px;
+  margin-left: 10px;
+}
+@media (max-width: 1400px) {
+  .furniture .main-container {
+    display: flex;
+    justify-content: center;
+  }
+  /* .furniture .main-container div:not(.middle-container) {
+    display: none;
+  }
+} */
+/* End Furniture */

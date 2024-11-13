@@ -1,0 +1,46 @@
+@media (max-width: 1200px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  header div:not(.logo, .nav) {
+    display: none;
+  }
+  .hero {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .products .container {
+    display: grid;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  header div:not(.logo) {
+    display: none;
+  }
+  .products .container {
+    display: grid;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(1, auto);
+    gap: 2rem;
+  }
+  .range .container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+}
